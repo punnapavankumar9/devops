@@ -1,8 +1,19 @@
 {
+  "author": {
+    "name": "pavan kumar punna",
+    "email": "punnapavankumar9@gmail.com"
+  },
+  "version": "1.0.0",
+  "name": "simple",
+  "scripts": {
+    "start": "tsc && node dist/app.js"
+  },
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.4",
     "@types/express": "^4.17.20",
     "@types/node": "^20.8.7",
     "typescript": "^5.2.2"

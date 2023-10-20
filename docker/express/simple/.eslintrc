@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "quotes": "error",
+        "max-len": [100, "off"]
+    }
+}
