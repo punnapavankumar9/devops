@@ -4,14 +4,11 @@ WORKDIR /usr/app/
 
 COPY package*.json .
 
-RUN npm install && npm cache clean --force \ 
-    && npm install -g typescript
+RUN npm install && npm cache clean --force 
 
 COPY . .
-
-RUN tsc 
+ENTRYPOINT [ "node", "src/app.js"]
 
 EXPOSE 80
 
-
-CMD [ "node", "dist/app.js" ]
+CMD [ "--color=green" ]
