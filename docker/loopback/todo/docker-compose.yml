@@ -1,0 +1,30 @@
+services:
+  backend:
+    image: ppk4/todo
+    container_name: todo-container
+    ports:
+      - 80:3000
+    environment:
+      - POSTGRES_HOST=postgres
+    networks:
+      - backend
+    depends_on:
+      - postgres
+  postgres:
+    image: ppk4/pg-todo
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pg-todo:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  pg-todo:
